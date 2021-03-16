@@ -2,6 +2,7 @@ version: "3"
 
 services:
   web:
+    image: streetmap/streetmap:${tag}
     build:
       context: .
     volumes:
@@ -19,6 +20,7 @@ services:
       - db
 
   db:
+    image: streetmap/postgres:${tag}
     build:
       context: .
       dockerfile: docker/postgres/Dockerfile
